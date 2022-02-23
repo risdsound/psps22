@@ -1,0 +1,23 @@
+#N canvas 265 23 967 625 10;
+#X obj 640 211 tgl 50 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 640 305 bng 50 250 50 0 empty empty empty 17 7 0 10 -262144
+-258113 -1;
+#X obj 640 270 metro 1000;
+#X text 325 233 Here's a "hello world" example \; Click on the message
+"hello world" \; You should see it print to the Pd Window;
+#X msg 73 203 hello world;
+#X obj 173 313 print;
+#X msg 202 250 hello whirrled;
+#X text 731 237 Here's a control example \; Click on the box \; It's
+a "toggle";
+#X text 159 70 Try switching between "edit" & "run" modes \; Depending
+on your OS \, use crtl-E or command-E \; Open up a new patch (File
+> New) and \; try patching these yourselves;
+#X text 45 19 Welcome to this introduction to Pd for Programming Sound:
+Performance Systems. If you are reading this \, then you have Pd installed.
+;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 4 0 5 0;
+#X connect 6 0 5 0;

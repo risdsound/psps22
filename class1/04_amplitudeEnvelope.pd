@@ -1,0 +1,75 @@
+#N canvas 320 23 1103 684 10;
+#X obj 452 592 dac~;
+#X msg 53 256 \; pd dsp \$1;
+#X obj 53 203 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 90 204 <- turn on sound;
+#X obj 452 503 *~;
+#X obj 452 264 line~;
+#X floatatom 452 127 5 0 0 0 - - -;
+#X obj 455 76 hsl 200 30 0 1 0 0 empty empty frequency -2 -10 0 12
+-262144 -1 -1 5300 1;
+#X obj 452 176 * 1000;
+#X floatatom 559 176 5 0 0 1 glide - -;
+#X obj 452 222 pack f 200;
+#X obj 452 304 phasor~ 440;
+#X obj 452 351 *~ 2;
+#X obj 452 394 -~ 1;
+#X obj 628 261 tgl 15 0 empty empty note_on/off 17 7 0 10 -262144 -1
+-1 0 1;
+#X floatatom 654 285 5 0 0 1 attack_ms - -;
+#X floatatom 680 312 5 0 0 1 decay_ms - -;
+#X floatatom 706 338 5 0 0 1 sustain_% - -;
+#X floatatom 733 367 5 0 0 1 release_ms - -;
+#X obj 628 402 adsr~ 10 10 80 50, f 18;
+#X obj 452 544 *~ 0.5;
+#N canvas 11 23 306 397 array_viz 1;
+#X obj 139 103 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array ph5_array 100 float 0;
+#X coords 0 1 99 -1 200 140 1 0 0;
+#X restore 42 209 graph;
+#X text 163 102 graph;
+#X obj 139 72 metro 100;
+#X obj 17 64 inlet~;
+#X obj 139 11 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 139 146 tabwrite~ ph5_array;
+#X connect 0 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X restore 230 542 pd array_viz;
+#X text 749 398 this is an abstraction: an abstraction is another Pd
+patch made to be loaded into a 'parent' patch \; it is in the same
+folder as this patch;
+#X obj 754 150 metro 500;
+#X obj 754 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 50 20 This is our first example of an amplitude envelope \,
+a signal that controls the volume of a waveform over a certain duratoin
+of time. Here \, the most common type is used an ADSR which stands
+for: Attack \, Decay \, Sustain \, Release.;
+#X connect 2 0 1 0;
+#X connect 4 0 20 0;
+#X connect 4 0 21 0;
+#X connect 5 0 11 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 10 0;
+#X connect 9 0 10 1;
+#X connect 10 0 5 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 4 0;
+#X connect 14 0 19 0;
+#X connect 15 0 19 1;
+#X connect 16 0 19 2;
+#X connect 17 0 19 3;
+#X connect 18 0 19 4;
+#X connect 19 0 4 1;
+#X connect 20 0 0 0;
+#X connect 20 0 0 1;
+#X connect 23 0 14 0;
+#X connect 24 0 23 0;
