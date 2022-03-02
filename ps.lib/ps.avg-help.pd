@@ -1,0 +1,15 @@
+#N canvas 595 102 649 300 12;
+#X obj 137 105 ps.avg;
+#X msg 108 60 12;
+#X msg 159 60 15;
+#X msg 217 60 16;
+#X msg 262 60 20;
+#X floatatom 137 154 5 0 0 0 - - -;
+#X text 225 112 get the average of last two consecutive numbers;
+#X floatatom 55 60 5 0 0 0 - - -;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 7 0 0 0;

@@ -1,0 +1,17 @@
+#N canvas 690 153 580 557 12;
+#X obj 81 98 t f f, f 9;
+#X obj 81 134 t f b;
+#X obj 85 181 f;
+#X obj 85 224 +;
+#X obj 85 262 / 2;
+#X text 48 9 average between two consecutive numbers;
+#X obj 81 54 inlet;
+#X obj 85 305 outlet;
+#X connect 0 0 1 0;
+#X connect 0 1 3 1;
+#X connect 1 0 2 1;
+#X connect 1 1 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 6 0 0 0;

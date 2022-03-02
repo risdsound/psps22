@@ -1,0 +1,24 @@
+#N canvas 287 215 960 511 10;
+#X floatatom 207 167 5 0 0 0 - - -;
+#X obj 227 227 f;
+#X obj 206 280 -, f 4;
+#X obj 206 327 wrap;
+#X obj 449 160 bng 15 250 50 0 empty empty calibrate_zero_pt 17 7 0
+10 -262130 -260097 -1;
+#X obj 207 51 inlet;
+#X obj 449 112 route /calibrate;
+#X obj 206 370 outlet;
+#X text 218 100 incoming values should be 0-1;
+#X obj 449 64 r \$1;
+#X obj 506 64 inlet;
+#X connect 0 0 1 1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 4 0;
+#X connect 9 0 6 0;
+#X connect 10 0 6 0;
+#X coords 0 511 1 510 130 130 0;

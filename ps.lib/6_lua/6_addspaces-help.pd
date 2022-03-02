@@ -1,0 +1,28 @@
+#N canvas 100 30 924 481 10;
+#X msg 331 304 p r o v i d e n c e ;
+#X obj 331 133 tosymbol;
+#X obj 331 212 unpack s f;
+#X floatatom 388 237 5 0 0 1 number_of_spaces_added - -, f 5;
+#X msg 320 84 xo*-^_;
+#X msg 446 64 ---o---o---*o--#x;
+#X msg 253 48 abcdefghijklmnopqrstuvwxyz;
+#X msg 530 94 (!@##^&#_+)(**&@(!(!)*@()!*@()!*()@*!()*@)(*)(!;
+#X msg 106 45 p r o v i d e n c e;
+#X msg 89 81 providence;
+#X obj 331 157 6_addspaces;
+#X obj 484 352 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 496 356 [6_addspaces];
+#X text 498 371 Add spaces between characters in string;
+#X obj 331 262 6_setmessage;
+#X connect 1 0 10 0;
+#X connect 2 0 14 0;
+#X connect 2 1 3 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;
+#X connect 8 0 1 0;
+#X connect 9 0 1 0;
+#X connect 10 0 2 0;
+#X connect 14 0 0 0;

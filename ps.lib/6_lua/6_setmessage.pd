@@ -1,0 +1,11 @@
+#N canvas 0 22 520 301 10;
+#X obj 148 112 list prepend set;
+#X obj 148 134 list trim;
+#X obj 148 91 inlet;
+#X obj 148 159 outlet;
+#X text 160 197 this is the equivalent of cyclone [prepend set] \;
+but also acts as a [fromsymbol] to set message \; for 6_lua abstractions
+;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;

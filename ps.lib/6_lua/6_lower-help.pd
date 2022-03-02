@@ -1,0 +1,20 @@
+#N canvas 100 30 902 247 10;
+#X obj 146 65 tosymbol;
+#X msg 146 30 WHAT;
+#X symbolatom 146 116 20 0 0 0 - - -, f 20;
+#X obj 146 141 prepend set;
+#X msg 146 168 who would format anything like this!;
+#X msg 184 30 WheRe;
+#X msg 231 30 Who WouLD FORmaT anYthinG LIKE thiS!;
+#X obj 146 91 6_lower;
+#X obj 492 54 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 504 58 [6_lower];
+#X text 506 73 Make all characters in a string lowercase;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 2 0;

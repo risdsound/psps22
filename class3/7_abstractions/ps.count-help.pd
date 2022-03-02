@@ -1,0 +1,10 @@
+#N canvas 571 105 450 300 12;
+#X obj 190 95 ps.count;
+#X obj 190 66 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 243 66 0;
+#X floatatom 190 159 5 0 0 0 - - -;
+#X text 279 67 reset start value;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;

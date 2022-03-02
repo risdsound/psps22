@@ -1,0 +1,20 @@
+#N canvas 100 30 511 636 10;
+#X obj 114 196 tosymbol;
+#X msg 114 314 dekciw eht rof tser oN;
+#X msg 148 152 No rest for the wicked;
+#X msg 114 119 gimme gimme gimme;
+#X msg 71 101 what;
+#X floatatom 34 138 5 0 0 0 - - -, f 5;
+#X obj 114 219 6_reverse;
+#X obj 55 368 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 67 372 [6_reverse];
+#X text 69 387 Reverse characters in string;
+#X obj 114 285 6_setmessage;
+#X connect 0 0 6 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 10 0;
+#X connect 10 0 1 0;

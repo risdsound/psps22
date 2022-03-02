@@ -1,0 +1,20 @@
+#N canvas 100 30 901 438 10;
+#X obj 291 182 print;
+#X msg 371 60 33 22 555 11;
+#X floatatom 188 220 10 0 0 0 - - -, f 10;
+#X msg 244 61 212 433 222 22 55;
+#X msg 128 62 1 22 333 22222;
+#X obj 188 179 unpack f f;
+#X floatatom 262 220 10 0 0 0 - - -, f 10;
+#X obj 291 143 6_maxmin;
+#X obj 458 211 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 470 215 [6_maxmin];
+#X text 472 230 Get max and min number in a list;
+#X connect 1 0 7 0;
+#X connect 3 0 7 0;
+#X connect 4 0 7 0;
+#X connect 5 0 2 0;
+#X connect 5 1 6 0;
+#X connect 7 0 0 0;
+#X connect 7 0 5 0;

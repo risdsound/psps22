@@ -1,0 +1,12 @@
+#N canvas 287 215 960 511 10;
+#X text 260 130 incoming values should be 0-1;
+#X obj 271 219 ps.calibrate;
+#X msg 340 184 /calibrate;
+#X obj 117 136 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 125 300 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7900 1;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X coords 0 511 1 510 130 130 0;

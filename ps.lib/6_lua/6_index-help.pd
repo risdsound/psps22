@@ -1,0 +1,51 @@
+#N canvas 442 525 1246 830 10;
+#X obj 255 398 print;
+#X msg 209 45 33 100 22 99 78;
+#X msg 391 345 clear;
+#X msg 412 188 one two three four five;
+#X obj 412 212 tosymbol;
+#X obj 412 246 pack s s s;
+#X obj 564 212 tosymbol;
+#X obj 676 212 tosymbol;
+#X msg 564 188 Huey Dewey Louie;
+#X msg 676 188 Somewhere Nowhere Anywhere;
+#X msg 373 105 one two three four five;
+#X obj 373 136 prepend list;
+#X obj 435 404 scrolllist 100 400 200 {Helvetica 10 bold} white black
+red;
+#X msg 435 374 add \$1;
+#X obj 435 345 tosymbol;
+#X obj 373 398 coll;
+#C restore;
+#X text 322 45 list of numbers;
+#X text 409 163 list of symbols;
+#X msg 285 71 33 three what is 44 99;
+#X text 433 70 mixed numbers and strings;
+#X text 530 105 lists beginning with strings needs to be prepended
+by "list";
+#X obj 373 281 6_index;
+#X obj 722 269 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 734 273 [6_index];
+#X text 736 288 Adds a numerical index to a list of items in the order
+they occur in a list;
+#X msg 111 99 x o x o x o x o;
+#X connect 1 0 21 0;
+#X connect 2 0 12 0;
+#X connect 2 0 15 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 21 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 2;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 21 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 18 0 21 0;
+#X connect 21 0 0 0;
+#X connect 21 0 14 0;
+#X connect 21 0 15 0;
+#X connect 25 0 21 0;

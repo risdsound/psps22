@@ -1,0 +1,66 @@
+#N canvas 100 30 1196 786 10;
+#X obj 261 141 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 282 141 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 303 142 5 0 0 0 - - -, f 5;
+#X symbolatom 341 142 10 0 0 0 - - -, f 10;
+#X obj 406 141 tosymbol;
+#X msg 406 103 Here is a statement;
+#X obj 216 304 prepend set;
+#X msg 216 375 eee;
+#X obj 198 304 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 443 455 prepend set;
+#X msg 443 547;
+#X obj 425 455 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 686 303 prepend set;
+#X msg 686 374 eee appended with this statement;
+#X floatatom 489 355 5 0 0 0 - - -, f 5;
+#X msg 536 103 Here is another statement;
+#X text 750 155 see Lua source code for comments;
+#X text 749 171 inlet/outlet 1 passes any input unchanged \; inlet/outlet
+2 produces a bang from any input \; inlet/outlet 3 only accepts floats
+\, adding 10 \; inlet/outlet 4 produces an appended list from input
+\;;
+#X obj 113 304 print outlet1;
+#X obj 339 455 print outlet2;
+#X obj 403 355 print outlet3;
+#X obj 600 374 print outlet4;
+#X obj 301 241 6_hello, f 36;
+#X obj 566 485 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 578 489 [6_hello];
+#X text 580 504 Hello world example \, learning to use pdlua;
+#X connect 0 0 22 0;
+#X connect 0 0 22 1;
+#X connect 1 0 22 0;
+#X connect 1 0 22 1;
+#X connect 1 0 22 3;
+#X connect 1 0 22 2;
+#X connect 2 0 22 0;
+#X connect 2 0 22 1;
+#X connect 2 0 22 3;
+#X connect 2 0 22 2;
+#X connect 3 0 22 0;
+#X connect 3 0 22 1;
+#X connect 3 0 22 3;
+#X connect 4 0 22 0;
+#X connect 4 0 22 1;
+#X connect 4 0 22 3;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 9 0 10 0;
+#X connect 12 0 13 0;
+#X connect 15 0 4 0;
+#X connect 22 0 6 0;
+#X connect 22 0 8 0;
+#X connect 22 0 18 0;
+#X connect 22 1 11 0;
+#X connect 22 1 9 0;
+#X connect 22 1 19 0;
+#X connect 22 2 14 0;
+#X connect 22 2 20 0;
+#X connect 22 3 12 0;
+#X connect 22 3 21 0;

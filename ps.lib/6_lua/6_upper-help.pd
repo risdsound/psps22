@@ -1,0 +1,18 @@
+#N canvas 100 30 658 382 10;
+#X obj 146 65 tosymbol;
+#X msg 146 168 WHO WOULD FORMAT ANYTHING LIKE THIS!;
+#X msg 231 30 Who WouLD FORmaT anYthinG LIKE thiS!;
+#X msg 184 30 where;
+#X msg 146 30 what;
+#X obj 146 91 6_upper;
+#X obj 81 223 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 93 227 [6_upper];
+#X text 95 242 Make all characters in a string uppercase;
+#X obj 146 141 6_setmessage;
+#X connect 0 0 5 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 9 0;
+#X connect 9 0 1 0;

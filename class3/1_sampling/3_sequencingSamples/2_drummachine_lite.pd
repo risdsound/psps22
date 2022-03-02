@@ -1,0 +1,58 @@
+#N canvas 348 23 823 725 12;
+#X obj 135 34 clock;
+#X floatatom 306 202 5 0 0 0 - - -;
+#X obj 396 685 dac~;
+#X obj 307 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 313 625 *~;
+#X obj 351 427 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8900 1;
+#X obj 351 582 line~;
+#X msg 351 562 \$1 50;
+#X obj 307 275 select 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16;
+#X obj 308 377 sampleplay~ dml1;
+#X text 483 24 open window to select sample;
+#X msg 380 22 \; dml1 /open;
+#X obj 448 626 *~;
+#X obj 486 428 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 10900 1;
+#X obj 486 583 line~;
+#X msg 486 563 \$1 50;
+#X obj 448 377 sampleplay~ dml2;
+#X msg 378 59 \; dml2 /open;
+#X obj 588 630 *~;
+#X obj 626 432 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 10700 1;
+#X obj 626 587 line~;
+#X msg 626 567 \$1 50;
+#X obj 588 377 sampleplay~ dml3;
+#X msg 384 95 \; dml3 /open;
+#X connect 0 1 1 0;
+#X connect 1 0 8 0;
+#X connect 3 0 9 0;
+#X connect 4 0 2 0;
+#X connect 4 0 2 1;
+#X connect 5 0 7 0;
+#X connect 6 0 4 1;
+#X connect 7 0 6 0;
+#X connect 8 0 3 0;
+#X connect 8 2 16 0;
+#X connect 8 4 3 0;
+#X connect 8 8 3 0;
+#X connect 8 9 16 0;
+#X connect 8 12 3 0;
+#X connect 8 14 16 0;
+#X connect 8 14 22 0;
+#X connect 9 0 4 0;
+#X connect 12 0 2 0;
+#X connect 12 0 2 1;
+#X connect 13 0 15 0;
+#X connect 14 0 12 1;
+#X connect 15 0 14 0;
+#X connect 16 0 12 0;
+#X connect 18 0 2 0;
+#X connect 18 0 2 1;
+#X connect 19 0 21 0;
+#X connect 20 0 18 1;
+#X connect 21 0 20 0;
+#X connect 22 0 18 0;

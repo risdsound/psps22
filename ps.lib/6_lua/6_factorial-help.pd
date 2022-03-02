@@ -1,0 +1,54 @@
+#N canvas 100 30 912 612 10;
+#X floatatom 89 169 5 0 0 0 - - -, f 5;
+#X floatatom 89 276 20 0 0 0 - - -, f 20;
+#X obj 216 275 print factorial;
+#X floatatom 452 462 20 0 0 0 - - -, f 20;
+#X msg 452 427 999999;
+#X msg 505 427 1e+06;
+#X msg 219 148 3;
+#X text 258 150 3 * 2 * 1 = 6;
+#X msg 219 92 5;
+#X text 258 94 5 * 4 * 3 * 2 * 1 = 120;
+#X msg 219 120 4;
+#X text 258 122 4 * 3 * 2 * 1 = 24;
+#X msg 219 64 6;
+#X text 258 66 6* 5 * 4 * 3 * 2 * 1 = 720;
+#X text 469 495 Btw: 999999 is the largest number that can be represented
+in Pd without scientific notation.;
+#X msg 219 36 7;
+#X text 258 38 7* 6* 5 * 4 * 3 * 2 * 1 = 5040;
+#X text 491 335 35 = infinity;
+#X msg 219 176 2;
+#X text 258 178 2 * 1 = 2;
+#X text 258 206 1 * 1 = 1;
+#X msg 219 204 1;
+#X text 67 427 This could be useful when you're trying to figure out
+how many position combinations are possible with "n" number of elements.
+For instance 3 elements could be arranged six different ways:;
+#X msg 81 497 1 2 3 \; 1 3 2 \; 2 3 1 \; 2 1 3 \; 3 1 2 \; 3 2 1;
+#X obj 89 232 6_factorial;
+#X obj 481 80 cnv 15 380 200 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 493 84 [6_factorial];
+#X text 495 103 A factorial function multiplies a series of descending
+natural numbers. No negative values or decimal places allowed. This
+object will automatically convert to integer (rounding down) and absolute
+value (converting negative to positive) to prevent stack overflow.
+;
+#X text 479 466 A factorial function multiplies a series of descending
+natural numbers. No negative values or decimal places allowed. This
+object will automatically convert to integer (rounding down) and absolute
+value (converting negative to positive) to prevent stack overflow.
+;
+#X connect 0 0 24 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X connect 8 0 0 0;
+#X connect 10 0 0 0;
+#X connect 12 0 0 0;
+#X connect 15 0 0 0;
+#X connect 18 0 0 0;
+#X connect 21 0 0 0;
+#X connect 24 0 1 0;
+#X connect 24 0 2 0;

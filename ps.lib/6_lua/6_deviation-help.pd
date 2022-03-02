@@ -1,0 +1,37 @@
+#N canvas 100 30 1295 499 10;
+#X obj 291 197 print;
+#X msg 400 40 33 22 555 11;
+#X floatatom 189 219 10 0 0 0 - - -, f 10;
+#X msg 257 49 212 433 222 22 55;
+#X msg 169 15 1 22 333 22222;
+#X obj 189 301 *;
+#X floatatom 189 336 10 0 0 0 - - -, f 10;
+#X text 268 339 variance (standard deviation squared \, i.e. multiplied
+by itself);
+#X msg 410 72 10 1;
+#X msg 436 112 1 2 3 4;
+#X msg 482 72 2 4 4 4 5 5 7 9;
+#X msg 43 116 4 4 4 4;
+#X msg 44 79 4 2 4 4;
+#X msg 45 43 4 2 2 4;
+#X msg 105 19 4 2 3 4;
+#X obj 291 143 6_deviation;
+#X obj 637 79 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 649 83 [6_deviation];
+#X text 651 98 get standard deviation;
+#X connect 1 0 15 0;
+#X connect 2 0 5 1;
+#X connect 2 0 5 0;
+#X connect 3 0 15 0;
+#X connect 4 0 15 0;
+#X connect 5 0 6 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 15 0 0 0;
+#X connect 15 0 2 0;

@@ -1,0 +1,53 @@
+#N canvas 224 23 1024 706 12;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array seq 32 float 1;
+#A 0 0.015748 0.235709 0.28571 0.807142 0.77857 0.749998 0.714283 0.678568
+0.621424 0.585709 0.521422 0.492849 0.464277 0.39999 0.371418 0.314274
+0.25713 0.207129 0.0551181 0.378561 0.449991 0.535708 0.56428 0.692854
+0.749998 0.807142 0.592852 0.485706 0.442848 0.385704 0.371418 0.362205
+;
+#X coords 0 1 31 0 200 140 1 0 0;
+#X restore 38 109 graph;
+#X obj 356 370 tabwrite seq;
+#X floatatom 437 339 5 0 0 0 - - -;
+#X floatatom 357 239 5 0 0 0 - - -;
+#X obj 360 199 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 700 1;
+#X obj 440 261 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7700 1;
+#X obj 437 311 int;
+#X text 360 177 value;
+#X text 446 238 index (column);
+#X obj 705 354 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 9071 1;
+#X obj 702 191 tabread seq;
+#X floatatom 702 232 5 0 0 0 - - -;
+#X text 747 153 index (column);
+#X floatatom 702 154 5 0 0 0 - - -;
+#X obj 702 313 line 1;
+#X msg 702 272 \$1 50;
+#X text 32 16 this is an array named "seq" an array is a 2d container
+for data you move through the column (index) in order to write to and
+read from an array;
+#X obj 437 284 * 31;
+#X obj 705 77 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2800 1;
+#X obj 702 127 int;
+#X text 711 54 index (column);
+#X obj 702 100 * 31;
+#X text 311 143 writing numbers into array with tabwrite;
+#X text 617 26 getting numbers from an array with tabread;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 17 0;
+#X connect 6 0 2 0;
+#X connect 10 0 11 0;
+#X connect 11 0 15 0;
+#X connect 13 0 10 0;
+#X connect 14 0 9 0;
+#X connect 15 0 14 0;
+#X connect 17 0 6 0;
+#X connect 18 0 21 0;
+#X connect 19 0 13 0;
+#X connect 21 0 19 0;

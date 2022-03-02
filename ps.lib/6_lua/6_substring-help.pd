@@ -1,0 +1,74 @@
+#N canvas 100 30 1273 890 10;
+#X msg 79 62 whattheheck;
+#X obj 79 226 tosymbol;
+#X floatatom 170 156 5 0 0 1 start_position_for_substring - -, f 5
+;
+#X floatatom 178 189 5 0 0 1 finish_position_of_substring - -, f 5
+;
+#X msg 79 357 w;
+#X msg 106 91 breaking up a string is hard to do;
+#X text 133 280 default start and finish of substring is position one
+;
+#X msg 505 62 whattheheck;
+#X obj 505 226 tosymbol;
+#X floatatom 591 158 5 0 0 1 start_position_for_substring - -, f 5
+;
+#X msg 505 357 theheck;
+#X msg 532 91 breaking up a string is hard to do;
+#X obj 79 451 tosymbol;
+#X msg 79 582 123;
+#X text 166 458 could be useful when you need to extract the good stuff
+;
+#X msg 79 424 garbageattheebeginning 123 garbageontheend;
+#X obj 450 597 tosymbol;
+#X msg 450 728 2ssq;
+#X obj 602 597 tosymbol;
+#X msg 602 728 40 5;
+#X msg 602 557 2000 40 5;
+#X msg 56 399 garbageattheebeginning 883 garbageontheend;
+#X msg 412 557 3.33331e+07;
+#X msg 491 557 2ssq0021;
+#X msg 686 557 2000 Y 202;
+#X text 627 257 -1 is the end of the string (very handy!);
+#X obj 79 259 6_substring;
+#X obj 505 259 6_substring 5 -1;
+#X obj 79 484 6_substring 24 26;
+#X obj 450 630 6_substring 1 4;
+#X obj 602 630 6_substring 6 10;
+#X obj 655 377 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 667 381 [6_substring];
+#X text 669 396 Grab a substring based on start and end positions;
+#X obj 505 333 6_setmessage;
+#X obj 79 333 6_setmessage;
+#X obj 79 558 6_setmessage;
+#X obj 450 704 6_setmessage;
+#X obj 602 704 6_setmessage;
+#X connect 0 0 1 0;
+#X connect 1 0 26 0;
+#X connect 2 0 26 1;
+#X connect 3 0 26 2;
+#X connect 5 0 1 0;
+#X connect 7 0 8 0;
+#X connect 8 0 27 0;
+#X connect 9 0 27 1;
+#X connect 11 0 8 0;
+#X connect 12 0 28 0;
+#X connect 15 0 12 0;
+#X connect 16 0 29 0;
+#X connect 18 0 30 0;
+#X connect 20 0 18 0;
+#X connect 21 0 12 0;
+#X connect 22 0 29 0;
+#X connect 23 0 16 0;
+#X connect 24 0 18 0;
+#X connect 26 0 35 0;
+#X connect 27 0 34 0;
+#X connect 28 0 36 0;
+#X connect 29 0 37 0;
+#X connect 30 0 38 0;
+#X connect 34 0 10 0;
+#X connect 35 0 4 0;
+#X connect 36 0 13 0;
+#X connect 37 0 17 0;
+#X connect 38 0 19 0;

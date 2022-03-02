@@ -1,0 +1,38 @@
+#N canvas 100 30 936 624 10;
+#X floatatom 83 124 5 0 0 0 - - -, f 5;
+#X floatatom 152 57 5 0 0 0 - - -, f 5;
+#X obj 83 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 200 124 5 0 0 0 - - -, f 5;
+#X floatatom 234 57 5 0 0 0 - - -, f 5;
+#X obj 200 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 357 124 5 0 0 0 - - -, f 5;
+#X floatatom 391 57 5 0 0 0 - - -, f 5;
+#X obj 357 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 200 92 6_cup 10 100;
+#X obj 357 92 6_cup 4 139, f 12;
+#X text 523 49 first inlet - bang \; middle inlet - count start \;
+rightmost inlet - interval \; arguments are start for count and interval
+;
+#X floatatom 117 57 5 0 0 0 - - -, f 5;
+#X obj 83 92 6_cup, f 12;
+#X floatatom 269 57 5 0 0 0 - - -, f 5;
+#X floatatom 426 57 5 0 0 0 - - -, f 5;
+#X obj 458 211 cnv 15 380 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X text 470 215 [6_cup];
+#X text 472 230 A counter;
+#X connect 1 0 13 2;
+#X connect 2 0 13 0;
+#X connect 4 0 9 1;
+#X connect 5 0 9 0;
+#X connect 7 0 10 1;
+#X connect 8 0 10 0;
+#X connect 9 0 3 0;
+#X connect 10 0 6 0;
+#X connect 12 0 13 1;
+#X connect 13 0 0 0;
+#X connect 14 0 9 2;
+#X connect 15 0 10 2;

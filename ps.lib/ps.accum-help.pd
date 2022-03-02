@@ -1,0 +1,14 @@
+#N canvas 749 128 614 301 12;
+#X obj 144 97 ps.accum;
+#X floatatom 144 144 5 0 0 0 - - -;
+#X msg 144 53 1;
+#X msg 181 53 -1;
+#X msg 233 54 2;
+#X msg 273 54 -2;
+#X text 137 194 a counter that responds to float increments (positive
+and negative values);
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;

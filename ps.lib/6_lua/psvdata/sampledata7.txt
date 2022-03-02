@@ -1,0 +1,6 @@
+xox,x,xo-,x,x
+oo,xx,x-o-,x-x-,xo^
+xo-x,xx,xxxxo-,x-,x^
+x^^^x,x^,x^o-,x^,x^
+x,x,o-,o,o#
+x#o^x,x^,x^o-,x#,x#
