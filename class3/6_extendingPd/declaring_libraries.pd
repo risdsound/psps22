@@ -1,4 +1,4 @@
-#N canvas 607 307 1030 625 12;
+#N canvas 910 534 1030 625 12;
 #X declare -path testlib;
 #X declare -path cyclone;
 #X declare -path ps.lib;
@@ -22,10 +22,8 @@ these \, then still use the [declare] object.;
 folder as this patch.;
 #X obj 257 452 declare -path cyclone;
 #X obj 323 489 counter;
-#X text 429 445 This is an "external" library I downloaded to the path:
-Documents/Pd using the menu Help > Find externals. Note that the use
-of external libraries won't work when we run Pd patches on mobile devices
-in a few weeks.;
 #X text 16 65 I made a folder called "ps.lib" in my Documents/Pd folder
 and have these abstractions inside.;
 #X obj 80 37 declare -path ps.lib;
+#X text 429 445 This is an "external" library I downloaded to the path:
+Documents/Pd using the menu Help > Find externals.;
