@@ -1,0 +1,179 @@
+#N canvas 469 23 1130 951 12;
+#X msg 229 244 read -resize \$1 \$2;
+#X obj 229 274 soundfiler;
+#X obj 229 216 pack s s;
+#X obj 229 156 t a b, f 8;
+#X obj 282 184 symbol \$0-sam1;
+#X obj 229 52 loadbang;
+#X obj 356 47 f \$0;
+#X floatatom 356 74 5 0 0 0 - - -;
+#X floatatom 177 329 10 0 0 0 samples - -;
+#X obj 229 85 t b b;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-sam1 13147 float 2;
+#X coords 0 1 13147 -1 200 140 1;
+#X restore 810 36 graph;
+#X text 399 183 get \$0 unique # for array;
+#X text 383 242 \$1 = file path \; \$2 = array name;
+#X text 640 211 In order to play a soundfile \, you need to control
+tabread4~ with a signal which is generally from either a phasor~ or
+a line~.;
+#X text 689 254 A phasor~ will automatically loop the soundfile because
+it goes from 0 to 1 at a given frequency. You must multiply the phasor
+by the size of the array.;
+#X text 624 317 A line~ will generally be used to play a sample as
+a "one shot" (it will not loop automatically).;
+#X obj 400 745 dac~;
+#X obj 473 661 *~;
+#X obj 491 583 tgl 15 0 empty empty on/off 17 7 0 10 -257985 -1 -1
+0 1;
+#N canvas 365 23 708 674 phasor_playback 0;
+#X floatatom 51 161 5 0 0 1 - - -;
+#X obj 51 119 expr 44100 / $f1;
+#X obj 93 414 phasor~;
+#X obj 93 499 tabread~ \$0-sam1;
+#X floatatom 107 194 5 0 0 0 - - -;
+#X obj 93 303 * 1;
+#X obj 93 384 line~;
+#X obj 93 454 *~;
+#X msg 93 357 \$1 100;
+#X obj 107 229 t b f;
+#X obj 93 274 f;
+#X text 159 188 change speed of sample playback by multiplying the
+frequency of the phasor (*2 = faster \, *0.5 = slower \, *-1 = reverse)
+;
+#X text 181 119 sampling rate divided by samples = frequency of phasor~
+;
+#X text 160 231 using "t" to make cold inlet hot;
+#X text 154 385 use line~ to create smooth speed transitions;
+#X obj 11 62 inlet;
+#X obj 93 577 outlet~;
+#X obj 328 62 inlet;
+#X text 143 453 multiply by # of samples (points in array);
+#X text 142 301 multiplying the original frequency by another value
+to change speed;
+#X text 59 63 array size;
+#X text 385 64 speed;
+#X connect 0 0 10 0;
+#X connect 1 0 0 0;
+#X connect 2 0 7 0;
+#X connect 3 0 16 0;
+#X connect 4 0 9 0;
+#X connect 5 0 8 0;
+#X connect 6 0 2 0;
+#X connect 7 0 3 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 9 1 5 1;
+#X connect 10 0 5 0;
+#X connect 15 0 1 0;
+#X connect 15 0 7 1;
+#X connect 17 0 4 0;
+#X restore 473 546 pd phasor_playback;
+#N canvas 190 23 1005 766 line_playback 0;
+#X floatatom 403 302 5 0 0 0 - - -;
+#X obj 361 193 / 44.1;
+#X obj 336 431 pack f f;
+#X obj 337 614 line~;
+#X obj 337 652 tabread~ \$0-sam1;
+#X msg 337 576 0 \, \$1 \$2;
+#X obj 291 411 bng 15 250 50 0 empty empty play_once -60 7 0 10 -262144
+-1 -1;
+#X text 461 248 samples divided by sampling rate = length of soundfile
+in milliseconds;
+#X obj 389 403 * 1;
+#X obj 403 329 t b f;
+#X obj 389 374 f;
+#X obj 149 67 inlet;
+#X text 406 432 make list with size of array (# of samples / points)
+and length in milliseconds;
+#X obj 308 68 inlet;
+#X obj 457 66 inlet;
+#X floatatom 361 228 5 0 0 0 - - -;
+#X text 454 292 multiplying the original millisecond length by another
+value to change speed (2x = slower \, 1x = normal \, 0.5 = slower)
+;
+#X obj 337 707 outlet~;
+#X text 453 336 using "t" to make cold inlet hot;
+#X text 194 68 array size;
+#X text 353 68 bang to play;
+#X text 503 67 speed;
+#X text 425 575 fill variables \$1 and \$2 with the values from pack
+;
+#X connect 0 0 9 0;
+#X connect 1 0 15 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 17 0;
+#X connect 5 0 3 0;
+#X connect 6 0 2 0;
+#X connect 8 0 2 1;
+#X connect 9 0 10 0;
+#X connect 9 1 8 1;
+#X connect 10 0 8 0;
+#X connect 11 0 1 0;
+#X connect 11 0 2 0;
+#X connect 13 0 6 0;
+#X connect 14 0 0 0;
+#X connect 15 0 10 0;
+#X restore 246 540 pd line_playback;
+#X obj 300 502 bng 15 250 50 0 empty empty play_once -60 7 0 10 -257985
+-1 -1;
+#X text 268 455 with line \, higher number = slower (negative number
+won't work with this implementation);
+#X text 628 528 with phasor \, higher number = faster (negative number
+= reverse playback);
+#X text 400 74 unique number for patch (used for array names);
+#X obj 722 417 loadbang;
+#X msg 722 448 1;
+#X obj 491 632 line~;
+#X msg 491 609 \$1 100;
+#X obj 247 661 *~;
+#X obj 265 583 tgl 15 0 empty empty on/off 17 7 0 10 -257985 -1 -1
+0 1;
+#X obj 265 632 line~;
+#X msg 265 609 \$1 100;
+#X obj 473 691 *~ 0.5;
+#X obj 247 691 *~ 0.5;
+#X msg 229 130 ./sounds/Conga5.wav;
+#X text 253 329 # of samples (points in the array);
+#X obj 579 499 cnv 15 100 30 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X floatatom 596 502 5 0 0 1 speed - -;
+#X obj 338 499 cnv 15 100 30 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X floatatom 355 502 5 0 0 1 speed - -;
+#X text 401 129 use local file path;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 3 1 4 0;
+#X connect 4 0 2 1;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 8 0 20 0;
+#X connect 8 0 19 0;
+#X connect 9 0 35 0;
+#X connect 9 1 6 0;
+#X connect 17 0 33 0;
+#X connect 18 0 28 0;
+#X connect 19 0 17 0;
+#X connect 20 0 29 0;
+#X connect 21 0 20 1;
+#X connect 25 0 26 0;
+#X connect 26 0 38 0;
+#X connect 26 0 40 0;
+#X connect 27 0 17 1;
+#X connect 28 0 27 0;
+#X connect 29 0 34 0;
+#X connect 30 0 32 0;
+#X connect 31 0 29 1;
+#X connect 32 0 31 0;
+#X connect 33 0 16 0;
+#X connect 33 0 16 1;
+#X connect 34 0 16 0;
+#X connect 34 0 16 1;
+#X connect 35 0 3 0;
+#X connect 38 0 19 1;
+#X connect 40 0 20 2;

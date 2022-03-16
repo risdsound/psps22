@@ -1,0 +1,90 @@
+#N canvas 40 23 1680 911 12;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-sam 6839 float 2;
+#X coords 0 1 6839 -1 200 140 1;
+#X restore 936 69 graph;
+#X msg 183 162 0;
+#X obj 250 606 dac~;
+#X floatatom 257 305 0 0 1000 0 - - -;
+#X obj 257 333 pack 0 1000;
+#X obj 257 358 line~;
+#X obj 249 523 +~;
+#X obj 183 127 metro 500;
+#X obj 182 97 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 375 334 using [line~] the delay time is variable (notice pitch
+changes when changing live due to ramp time);
+#X floatatom 330 303 5 0 0 0 - - -;
+#X obj 354 746 delwrite~ \$0-echo 5000;
+#X obj 258 402 delread4~ \$0-echo;
+#X obj 346 85 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 346 155 print;
+#X obj 454 117 symbol \$0-echo;
+#X text 336 46 \$0 produces a different number for every patch \, use
+this for names of delay lines \, arrays \, etc.;
+#X obj 185 197 tabplay~ \$0-sam;
+#X obj 346 117 symbol \$0-sam;
+#X text 529 746 place [delwrite~] after combined signals to create
+feedback;
+#X floatatom 372 583 0 0 99 0 - - -;
+#X obj 372 655 line~;
+#X obj 372 631 pack 0 100;
+#X obj 372 607 * 0.01;
+#X obj 354 683 *~;
+#X obj 354 707 clip~ -1 1;
+#X msg 842 624 read -resize \$1 \$2;
+#X obj 842 654 soundfiler;
+#X obj 842 421 openpanel;
+#X obj 842 391 t b b;
+#X obj 842 451 pack s s;
+#X obj 842 365 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 919 422 symbol \$0-sam;
+#X obj 991 570 pack s s;
+#X obj 1044 538 symbol \$0-sam;
+#X msg 991 462 ./sounds/Conga2.wav;
+#X obj 991 503 t a b, f 8;
+#X text 403 156 check out the Pd console to find out what the unique
+number for this patch is;
+#X text 413 581 <= feedback (hundredths) --- don't exceed 99;
+#X text 840 253 using \$0 is handy \, but isn't understood when typed
+directly as a message \, here are solutions for using [openpanel] and
+for reading with a local file path ( ./ );
+#X text 1035 423 use symbol object to put the \$0-sam into a list;
+#X text 1062 504 file paths gets passed with "a" argument;
+#X text 1143 538 use symbol object to put the \$0-sam into a list;
+#X connect 1 0 17 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 12 0;
+#X connect 6 0 2 0;
+#X connect 6 0 2 1;
+#X connect 6 0 24 0;
+#X connect 7 0 1 0;
+#X connect 8 0 7 0;
+#X connect 10 0 4 1;
+#X connect 12 0 6 1;
+#X connect 13 0 15 0;
+#X connect 13 0 18 0;
+#X connect 15 0 14 0;
+#X connect 17 0 6 0;
+#X connect 18 0 14 0;
+#X connect 20 0 23 0;
+#X connect 21 0 24 1;
+#X connect 22 0 21 0;
+#X connect 23 0 22 0;
+#X connect 24 0 25 0;
+#X connect 25 0 11 0;
+#X connect 26 0 27 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 29 1 32 0;
+#X connect 30 0 26 0;
+#X connect 31 0 29 0;
+#X connect 32 0 30 1;
+#X connect 33 0 26 0;
+#X connect 34 0 33 1;
+#X connect 35 0 36 0;
+#X connect 36 0 33 0;
+#X connect 36 1 34 0;
