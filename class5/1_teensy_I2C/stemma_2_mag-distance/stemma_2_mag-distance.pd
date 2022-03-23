@@ -1,0 +1,37 @@
+#N canvas 1027 113 738 454 10;
+#X msg 53 169 close;
+#X obj 45 8 cnv 15 440 60 empty empty empty 20 12 0 14 #c0d828 #404040
+0;
+#X msg 44 142 devices;
+#X floatatom 104 150 5 0 0 0 - - - 0;
+#X msg 104 169 open \$1;
+#X obj 44 256 s;
+#X obj 44 234 serial_print any;
+#X text 46 89 Requires [comport] object \; install under Help > Find
+Externals, f 72;
+#X text 52 16 [serial_print]: abstraction that works with Arduinos'
+Serial.print() and Serial.println() functions (with the use of [comport]).
+It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymonitis/Arduino_Pd
+;
+#X floatatom 268 187 10 0 0 0 - - - 0;
+#X obj 44 210 comport 1 9600;
+#X floatatom 339 187 10 0 0 0 - - - 0;
+#X floatatom 407 187 10 0 0 0 - - - 0;
+#X floatatom 266 282 10 0 0 0 - - - 0;
+#X obj 266 250 r distance:;
+#X text 266 124 3d magnetometer;
+#X text 264 231 time of flight distance;
+#X obj 268 148 r mx:;
+#X obj 339 148 r my:;
+#X obj 407 148 r mz:;
+#X connect 0 0 10 0;
+#X connect 2 0 10 0;
+#X connect 3 0 4 0;
+#X connect 4 0 10 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 10 0 6 0;
+#X connect 14 0 13 0;
+#X connect 17 0 9 0;
+#X connect 18 0 11 0;
+#X connect 19 0 12 0;

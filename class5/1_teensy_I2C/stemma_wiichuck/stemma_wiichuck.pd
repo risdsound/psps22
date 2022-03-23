@@ -1,0 +1,169 @@
+#N canvas 1027 113 1282 527 10;
+#X msg 53 169 close;
+#X obj 45 8 cnv 15 440 60 empty empty empty 20 12 0 14 #c0d828 #404040
+0;
+#X msg 44 142 devices;
+#X floatatom 104 150 5 0 0 0 - - - 0;
+#X msg 104 169 open \$1;
+#X obj 44 256 s;
+#X obj 44 234 serial_print any;
+#X text 46 88 Requires [comport] object \; install under Help > Find
+Externals, f 72;
+#X text 52 16 [serial_print]: abstraction that works with Arduinos'
+Serial.print() and Serial.println() functions (with the use of [comport]).
+It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymonitis/Arduino_Pd
+;
+#X floatatom 268 187 10 0 0 0 - - - 0;
+#X obj 44 210 comport 1 9600;
+#X floatatom 438 187 10 0 0 0 - - - 0;
+#X floatatom 602 187 10 0 0 0 - - - 0;
+#X obj 271 375 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 605 375 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 268 148 r nx:;
+#X obj 438 148 r ny:;
+#X obj 602 149 r nz:;
+#X obj 268 266 / 1023;
+#X obj 438 265 / 1023;
+#X obj 602 266 / 1023;
+#X floatatom 764 187 10 0 0 0 - - - 0;
+#X floatatom 927 187 10 0 0 0 - - - 0;
+#X obj 767 369 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 764 146 r jx:;
+#X obj 764 263 / 255;
+#X obj 927 147 r jy:;
+#X obj 927 214 / 255;
+#X floatatom 1037 212 10 0 0 0 - - - 0;
+#X floatatom 1120 212 10 0 0 0 - - - 0;
+#X obj 1037 144 r bz:;
+#X obj 1120 142 r bc:;
+#X obj 1037 244 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 1120 244 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#N canvas 121 146 811 569 calibrate 0;
+#X floatatom 211 155 5 0 0 0 - - - 0;
+#X obj 231 215 f;
+#X obj 210 269 -, f 4;
+#X obj 337 162 bng 15 250 50 0 empty empty calibrate_zero_pt 17 7 0
+10 #fcfcc4 #fc8000 #000000;
+#X obj 211 70 inlet;
+#X obj 337 72 inlet;
+#X obj 210 458 outlet;
+#X connect 0 0 1 1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 6 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X restore 268 235 pd calibrate;
+#X obj 337 212 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#N canvas 121 146 811 569 calibrate 0;
+#X floatatom 211 155 5 0 0 0 - - - 0;
+#X obj 231 215 f;
+#X obj 210 269 -, f 4;
+#X obj 337 162 bng 15 250 50 0 empty empty calibrate_zero_pt 17 7 0
+10 #fcfcc4 #fc8000 #000000;
+#X obj 211 70 inlet;
+#X obj 337 72 inlet;
+#X obj 210 458 outlet;
+#X connect 0 0 1 1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 6 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X restore 438 231 pd calibrate;
+#X obj 507 208 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#N canvas 121 146 811 569 calibrate 0;
+#X floatatom 211 155 5 0 0 0 - - - 0;
+#X obj 231 215 f;
+#X obj 210 269 -, f 4;
+#X obj 337 162 bng 15 250 50 0 empty empty calibrate_zero_pt 17 7 0
+10 #fcfcc4 #fc8000 #000000;
+#X obj 211 70 inlet;
+#X obj 337 72 inlet;
+#X obj 210 458 outlet;
+#X connect 0 0 1 1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 6 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X restore 602 235 pd calibrate;
+#X obj 671 212 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 268 295 10 0 0 0 - - - 0;
+#X floatatom 438 294 10 0 0 0 - - - 0;
+#X floatatom 602 295 10 0 0 0 - - - 0;
+#X obj 927 296 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 438 371 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 506 103 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 764 325 line;
+#X msg 764 298 \$1 100;
+#X obj 926 266 line;
+#X msg 926 239 \$1 100;
+#X obj 268 348 line;
+#X obj 438 346 line;
+#X obj 602 348 line;
+#X msg 268 321 \$1 20;
+#X msg 438 319 \$1 20;
+#X msg 602 321 \$1 20;
+#X connect 0 0 10 0;
+#X connect 2 0 10 0;
+#X connect 3 0 4 0;
+#X connect 4 0 10 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 9 0 34 0;
+#X connect 10 0 6 0;
+#X connect 11 0 36 0;
+#X connect 12 0 38 0;
+#X connect 15 0 9 0;
+#X connect 16 0 11 0;
+#X connect 17 0 12 0;
+#X connect 18 0 40 0;
+#X connect 19 0 41 0;
+#X connect 20 0 42 0;
+#X connect 21 0 25 0;
+#X connect 22 0 27 0;
+#X connect 24 0 21 0;
+#X connect 25 0 47 0;
+#X connect 26 0 22 0;
+#X connect 27 0 49 0;
+#X connect 28 0 32 0;
+#X connect 29 0 33 0;
+#X connect 30 0 28 0;
+#X connect 31 0 29 0;
+#X connect 34 0 18 0;
+#X connect 35 0 34 1;
+#X connect 36 0 19 0;
+#X connect 37 0 36 1;
+#X connect 38 0 20 0;
+#X connect 39 0 38 1;
+#X connect 40 0 53 0;
+#X connect 41 0 54 0;
+#X connect 42 0 55 0;
+#X connect 45 0 37 0;
+#X connect 45 0 39 0;
+#X connect 45 0 35 0;
+#X connect 46 0 23 0;
+#X connect 47 0 46 0;
+#X connect 48 0 43 0;
+#X connect 49 0 48 0;
+#X connect 50 0 13 0;
+#X connect 51 0 44 0;
+#X connect 52 0 14 0;
+#X connect 53 0 50 0;
+#X connect 54 0 51 0;
+#X connect 55 0 52 0;

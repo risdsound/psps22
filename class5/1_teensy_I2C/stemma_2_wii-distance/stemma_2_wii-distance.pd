@@ -1,0 +1,55 @@
+#N canvas 1027 113 1343 856 10;
+#X msg 53 169 close;
+#X obj 45 8 cnv 15 440 60 empty empty empty 20 12 0 14 #c0d828 #404040
+0;
+#X msg 44 142 devices;
+#X floatatom 104 150 5 0 0 0 - - - 0;
+#X msg 104 169 open \$1;
+#X obj 44 256 s;
+#X obj 44 234 serial_print any;
+#X text 46 89 Requires [comport] object \; install under Help > Find
+Externals, f 72;
+#X text 52 16 [serial_print]: abstraction that works with Arduinos'
+Serial.print() and Serial.println() functions (with the use of [comport]).
+It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymonitis/Arduino_Pd
+;
+#X floatatom 268 187 10 0 0 0 - - - 0;
+#X obj 44 210 comport 1 9600;
+#X floatatom 339 187 10 0 0 0 - - - 0;
+#X floatatom 407 187 10 0 0 0 - - - 0;
+#X obj 268 148 r nx:;
+#X obj 339 148 r ny:;
+#X obj 407 148 r nz:;
+#X floatatom 476 187 10 0 0 0 - - - 0;
+#X floatatom 546 187 10 0 0 0 - - - 0;
+#X obj 476 148 r jx:;
+#X obj 546 148 r jy:;
+#X floatatom 616 187 10 0 0 0 - - - 0;
+#X floatatom 699 187 10 0 0 0 - - - 0;
+#X obj 616 148 r bz:;
+#X obj 699 148 r bc:;
+#X obj 616 216 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 699 216 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X floatatom 590 325 10 0 0 0 - - - 0;
+#X obj 590 293 r distance:;
+#X text 268 123 Wii chuck;
+#X text 588 274 time of flight distance;
+#X connect 0 0 10 0;
+#X connect 2 0 10 0;
+#X connect 3 0 4 0;
+#X connect 4 0 10 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 10 0 6 0;
+#X connect 13 0 9 0;
+#X connect 14 0 11 0;
+#X connect 15 0 12 0;
+#X connect 18 0 16 0;
+#X connect 19 0 17 0;
+#X connect 20 0 24 0;
+#X connect 21 0 25 0;
+#X connect 22 0 20 0;
+#X connect 23 0 21 0;
+#X connect 27 0 26 0;
