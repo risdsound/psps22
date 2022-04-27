@@ -1,0 +1,124 @@
+#N canvas 698 230 1141 641 12;
+#X obj 116 71 key;
+#X obj 180 71 keyup;
+#X obj 419 53 keyname;
+#X floatatom 116 110 5 0 0 0 - - - 0;
+#X floatatom 180 110 5 0 0 0 - - - 0;
+#X floatatom 419 92 5 0 0 0 - - - 0;
+#X symbolatom 468 92 10 0 0 0 - - - 0;
+#X obj 116 184 select 32;
+#X obj 116 239 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 116 283 1;
+#X obj 159 354 tgl 40 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 225 185 select 32;
+#X obj 225 240 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 225 284 0;
+#X obj 159 433 change;
+#X obj 159 475 tgl 40 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X text 225 434 filters out repititions of a number;
+#X obj 534 149 select a b c d e f g h i j k l;
+#X obj 534 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 553 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 572 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 591 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 610 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 629 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 648 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 667 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 688 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 707 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 726 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 745 197 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 418 265 route a b c d e f g h i j k l;
+#X obj 418 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 418 235 list trim;
+#X obj 418 204 pack s f;
+#X obj 418 160 symbol;
+#X obj 419 133 t b f;
+#X obj 437 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 455 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 474 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 493 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 512 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 530 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 549 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 567 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 586 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 605 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 623 343 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 656 342 print;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 2 1 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 11 0;
+#X connect 5 0 35 0;
+#X connect 6 0 17 0;
+#X connect 6 0 34 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 14 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 10 0;
+#X connect 14 0 15 0;
+#X connect 17 0 18 0;
+#X connect 17 1 19 0;
+#X connect 17 2 20 0;
+#X connect 17 3 21 0;
+#X connect 17 4 22 0;
+#X connect 17 5 23 0;
+#X connect 17 6 24 0;
+#X connect 17 7 25 0;
+#X connect 17 8 26 0;
+#X connect 17 9 27 0;
+#X connect 17 10 28 0;
+#X connect 17 11 29 0;
+#X connect 30 0 31 0;
+#X connect 30 1 36 0;
+#X connect 30 2 37 0;
+#X connect 30 3 38 0;
+#X connect 30 4 39 0;
+#X connect 30 5 40 0;
+#X connect 30 6 41 0;
+#X connect 30 7 42 0;
+#X connect 30 8 43 0;
+#X connect 30 9 44 0;
+#X connect 30 10 45 0;
+#X connect 30 11 46 0;
+#X connect 30 12 47 0;
+#X connect 32 0 30 0;
+#X connect 33 0 32 0;
+#X connect 34 0 33 0;
+#X connect 35 0 34 0;
+#X connect 35 1 33 1;

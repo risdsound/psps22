@@ -1,0 +1,97 @@
+#N canvas 255 23 1618 737 12;
+#X obj 514 149 netreceive -u -b;
+#X msg 778 94 listen 0;
+#X text 867 93 stop listening;
+#X text 653 149 UDP packets \, binary output, f 13;
+#X obj 514 178 oscparse;
+#X obj 32 263 pdcontrol;
+#X obj 381 302 print;
+#X floatatom 514 340 5 0 0 0 - - -;
+#X floatatom 575 340 5 0 0 0 - - -;
+#X floatatom 636 340 5 0 0 0 - - -;
+#X floatatom 698 339 5 0 0 0 - - -;
+#X floatatom 756 400 5 0 0 0 - - -;
+#X floatatom 799 400 5 0 0 0 - - -;
+#X text 37 20 OSC (Open Sound Control) is a common format for sending
+data over a network (including wireless) or between applications on
+the same computer. When trying to connect a piece of hardware to Pd
+\, sometimes the best solution is to find an application that already
+exists which will convert the data to OSC \, then parse the OSC formatted
+data in Pd.;
+#X msg 514 94 listen 7400;
+#X msg 32 235 browse https://cycling74.com/products/max;
+#X obj 514 288 route hi, f 53;
+#X obj 514 254 list trim;
+#X obj 514 313 route 18 19 20 21, f 35;
+#X obj 1189 402 route 22;
+#X floatatom 1189 431 5 0 0 0 - - -;
+#X obj 1189 460 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 8;
+#X floatatom 842 400 5 0 0 0 - - -;
+#X floatatom 885 400 5 0 0 0 - - -;
+#X obj 756 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 799 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 842 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 885 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 756 340 route 5 6 7 8 9 10 11 12 13 14, f 62;
+#X floatatom 927 400 5 0 0 0 - - -;
+#X floatatom 970 400 5 0 0 0 - - -;
+#X floatatom 1013 400 5 0 0 0 - - -;
+#X floatatom 1056 400 5 0 0 0 - - -;
+#X obj 927 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 970 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 1013 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 1056 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X floatatom 1099 400 5 0 0 0 - - -;
+#X floatatom 1142 400 5 0 0 0 - - -;
+#X obj 1099 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 1142 429 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X text 36 131 This patch parses data from a Max patch using the "hi"
+object to send data from a Logitech Gamepad;
+#X text 616 93 listen on port 7400;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 4 0 17 0;
+#X connect 11 0 24 0;
+#X connect 12 0 25 0;
+#X connect 14 0 0 0;
+#X connect 15 0 5 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 17 0 6 0;
+#X connect 18 0 7 0;
+#X connect 18 1 8 0;
+#X connect 18 2 9 0;
+#X connect 18 3 10 0;
+#X connect 18 4 28 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 22 0 26 0;
+#X connect 23 0 27 0;
+#X connect 28 0 11 0;
+#X connect 28 1 12 0;
+#X connect 28 2 22 0;
+#X connect 28 3 23 0;
+#X connect 28 4 29 0;
+#X connect 28 5 30 0;
+#X connect 28 6 31 0;
+#X connect 28 7 32 0;
+#X connect 28 8 37 0;
+#X connect 28 9 38 0;
+#X connect 28 10 19 0;
+#X connect 29 0 33 0;
+#X connect 30 0 34 0;
+#X connect 31 0 35 0;
+#X connect 32 0 36 0;
+#X connect 37 0 39 0;
+#X connect 38 0 40 0;

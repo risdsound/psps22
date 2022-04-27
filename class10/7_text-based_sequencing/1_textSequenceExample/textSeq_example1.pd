@@ -1,0 +1,97 @@
+#N canvas 522 23 1077 822 12;
+#X text 106 80 Define text object and load file;
+#X msg 113 120 read params.txt;
+#X msg 131 325 line \$1 \, step;
+#X floatatom 131 293 5 0 0 0 - - -;
+#X msg 32 274 auto;
+#X msg 32 244 line 0;
+#X obj 45 430 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 119 532 r /param1;
+#X msg 251 324 tempo 1 msec;
+#X text 271 185 the -g flag gives text a qlist style functionality
+with receive names at start of lines and wait times at start of lines
+if wanted;
+#X text 174 279 the nice thing about using text instead of qlist is
+that you can more easily jump to specific lines;
+#X obj 131 396 print wait;
+#X obj 535 458 r ------------------------;
+#X floatatom 535 488 5 0 0 0 - - -;
+#X obj 119 564 unpack f f f f, f 19;
+#X floatatom 119 599 5 0 0 0 - - -;
+#X floatatom 162 599 5 0 0 0 - - -;
+#X floatatom 205 599 5 0 0 0 - - -;
+#X floatatom 249 599 5 0 0 0 - - -;
+#X obj 307 564 unpack f f f f, f 19;
+#X floatatom 307 599 5 0 0 0 - - -;
+#X floatatom 350 599 5 0 0 0 - - -;
+#X floatatom 393 599 5 0 0 0 - - -;
+#X floatatom 437 599 5 0 0 0 - - -;
+#X obj 307 532 r /param2;
+#X text 283 146 -k flag saves the text in the object;
+#X text 730 458 using this receive to create sections;
+#X text 88 245 rewind;
+#X text 76 275 play;
+#X obj 45 456 spigot;
+#X msg 45 480 line 0 \, auto;
+#X obj 84 430 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array seq8 8 float 3;
+#A 0 100 0 60 0 100 0 20 0;
+#X coords 0 127 8 0 200 140 1 0 0;
+#X restore 751 89 graph;
+#X obj 498 564 array set seq8;
+#X obj 498 532 r /array1;
+#X obj 617 564 array set seq9;
+#X obj 617 532 r /array2;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array seq9 8 float 3;
+#A 0 80 60 80 60 30 30 30 10;
+#X coords 0 127 8 0 200 140 1 0 0;
+#X restore 751 266 graph;
+#X obj 113 145 text define -k \$0-test;
+#A set ------------------------ 1 \; /param1 300 200 400 100 \; /param2
+100 222 555 999 \; /array1 60 60 20 20 90 50 30 10 \; /array2 10 20
+30 20 10 20 30 20 \; 1000 \; ------------------------ 2 \; /param1
+0 0 0 0 \; /param2 1 2 3 4 \; /array1 100 127 60 62 64 66 88 87 \;
+/array2 100 120 10 60 50 40 10 10 \; 1000 \; ------------------------
+3 \; /param1 90 80 70 60 \; /param2 11 22 33 44 \; /array1 20 30 40
+50 60 70 80 90 \; /array2 0 20 0 20 0 20 0 20 \; 1000 \; ------------------------
+4 \; /param1 900 801 701 601 \; /param2 411 422 433 444 \; /array1
+100 0 60 0 100 0 20 0 \; /array2 80 60 80 60 30 30 30 10 \; 1000 \;
+;
+#X obj 131 367 text sequence \$0-test -g;
+#X msg 349 324 tempo 2 msec;
+#X msg 448 324 tempo 0.5 msec;
+#X msg 558 324 tempo 0.25 msec;
+#X msg 6 335 line 0 \, auto;
+#X connect 1 0 38 0;
+#X connect 2 0 39 0;
+#X connect 3 0 2 0;
+#X connect 4 0 39 0;
+#X connect 5 0 39 0;
+#X connect 6 0 29 0;
+#X connect 7 0 14 0;
+#X connect 8 0 39 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 14 1 16 0;
+#X connect 14 2 17 0;
+#X connect 14 3 18 0;
+#X connect 19 0 20 0;
+#X connect 19 1 21 0;
+#X connect 19 2 22 0;
+#X connect 19 3 23 0;
+#X connect 24 0 19 0;
+#X connect 29 0 30 0;
+#X connect 30 0 39 0;
+#X connect 31 0 29 1;
+#X connect 34 0 33 0;
+#X connect 36 0 35 0;
+#X connect 39 0 11 0;
+#X connect 39 1 6 0;
+#X connect 40 0 39 0;
+#X connect 41 0 39 0;
+#X connect 42 0 39 0;
+#X connect 43 0 39 0;

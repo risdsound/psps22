@@ -1,0 +1,15 @@
+#N canvas 746 150 793 644 10;
+#X obj 130 148 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 130 179 * 127;
+#X obj 168 108 ctlin 51;
+#X text 237 108 pushbutton input MIDI;
+#X text 247 265 LED output MIDI;
+#X floatatom 194 142 5 0 0 0 - - -;
+#X floatatom 130 211 5 0 0 0 - - -;
+#X obj 171 267 ctlout 63;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 5 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 0;

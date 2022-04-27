@@ -1,0 +1,58 @@
+#N canvas 658 141 1019 681 10;
+#X msg 204 217 close;
+#X obj 45 8 cnv 15 440 60 empty empty empty 20 12 0 14 -200075 -66577
+0;
+#X msg 195 190 devices;
+#X floatatom 255 198 5 0 0 0 - - -;
+#X msg 255 217 open \$1;
+#X obj 195 304 s;
+#X obj 195 282 serial_print any;
+#X text 49 82 Requires [comport] object \; install under Help > Find
+Externals, f 72;
+#X text 52 16 [serial_print]: abstraction that works with Arduinos'
+Serial.print() and Serial.println() functions (with the use of [comport]).
+It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymonitis/Arduino_Pd
+;
+#X symbolatom 288 303 20 0 0 0 - - -;
+#X obj 656 297 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 658 401 f;
+#X obj 656 272 t b f;
+#X obj 657 447 s digout;
+#X obj 163 161 r digout;
+#X text 751 320 ensures data isn't sent too fast;
+#X obj 631 401 f 3;
+#X obj 630 349 t b b;
+#X obj 195 260 comport 1 9600;
+#X obj 460 133 r analog_values:;
+#X obj 657 132 r digital_values:;
+#X obj 657 155 unpack f;
+#X obj 657 178 change;
+#X floatatom 657 205 5 0 0 0 - - -;
+#X obj 460 157 unpack f;
+#X floatatom 460 186 5 0 0 0 - - -;
+#X text 502 401 number of output pin;
+#X obj 656 320 bangfilter 20;
+#X connect 0 0 18 0;
+#X connect 2 0 18 0;
+#X connect 3 0 4 0;
+#X connect 4 0 18 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 6 1 9 0;
+#X connect 10 0 27 0;
+#X connect 11 0 13 0;
+#X connect 12 0 10 0;
+#X connect 12 1 11 1;
+#X connect 14 0 18 0;
+#X connect 16 0 13 0;
+#X connect 17 0 11 0;
+#X connect 17 1 16 0;
+#X connect 18 0 6 0;
+#X connect 19 0 24 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 12 0;
+#X connect 24 0 25 0;
+#X connect 27 0 17 0;

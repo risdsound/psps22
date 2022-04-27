@@ -1,0 +1,51 @@
+#N canvas 306 139 1119 678 12;
+#X obj 290 308 delwrite~ echo1 5000;
+#X text 461 304 arguments are name of delay line (1) and delay time
+in milliseconds (2);
+#X obj 326 192 tabplay~ sam1;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array sam1 5304 float 2;
+#X coords 0 1 5304 -1 200 140 1;
+#X restore 794 70 graph;
+#X obj 497 127 openpanel;
+#X obj 497 191 soundfiler;
+#X msg 497 158 read -resize \$1 sam1;
+#X obj 497 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 326 157 0;
+#X obj 119 622 dac~;
+#X floatatom 284 393 0 0 1000 0 - - -;
+#X obj 284 421 pack 0 1000;
+#X obj 284 446 line~;
+#X text 46 21 To create an audio delay (echo effect) \, you need to
+use [delwrite~] and [delread4~];
+#X obj 284 472 delread4~ echo1;
+#X text 406 473 argument is name of delay \, matching [delwrite~];
+#X obj 118 539 +~;
+#X text 174 545 mix delayed signal with original signal to create echo
+effect;
+#X obj 326 122 metro 500;
+#X obj 326 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 413 406 using [line~] the delay time is variable (notice pitch
+changes when changing live due to ramp time);
+#X floatatom 357 391 5 0 0 0 - - -;
+#X msg 624 225 read -resize ./sounds/Conga2.wav sam1;
+#X text 634 251 use local file path with "./" here \, there is a subfolder
+within the project folder called "sounds";
+#X connect 2 0 0 0;
+#X connect 2 0 16 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 2 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 14 0 16 1;
+#X connect 16 0 9 0;
+#X connect 16 0 9 1;
+#X connect 18 0 8 0;
+#X connect 19 0 18 0;
+#X connect 21 0 11 1;
+#X connect 22 0 5 0;

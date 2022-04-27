@@ -1,0 +1,101 @@
+#N canvas 265 23 1500 737 12;
+#X obj 672 173 netreceive -u -b;
+#X msg 936 118 listen 0;
+#X text 1025 117 stop listening;
+#X text 811 173 UDP packets \, binary output, f 13;
+#X obj 672 202 oscparse;
+#X obj 32 263 pdcontrol;
+#X obj 578 378 print;
+#X floatatom 672 381 5 0 0 0 - - -;
+#X floatatom 733 381 5 0 0 0 - - -;
+#X floatatom 795 381 5 0 0 0 - - -;
+#X text 37 20 OSC (Open Sound Control) is a common format for sending
+data over a network (including wireless) or between applications on
+the same computer. When trying to connect a piece of hardware to Pd
+\, sometimes the best solution is to find an application that already
+exists which will convert the data to OSC \, then parse the OSC formatted
+data in Pd.;
+#X obj 672 241 list trim;
+#X msg 672 118 listen 9999;
+#X text 774 117 listen on port 9999;
+#X obj 672 306 route gyrosc, f 53;
+#X obj 672 354 unpack f f f, f 18;
+#X obj 672 329 route gyro accel, f 57;
+#X floatatom 849 382 5 0 0 0 - - -;
+#X floatatom 910 382 5 0 0 0 - - -;
+#X floatatom 972 382 5 0 0 0 - - -;
+#X obj 849 355 unpack f f f, f 18;
+#X obj 1050 384 route button gps;
+#X obj 873 477 route 1 2 3 4 5 6 7 8 9;
+#X obj 873 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 890 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 908 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 925 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 943 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 960 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 978 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 995 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 1013 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 1104 443 unpack f f f f f f;
+#X floatatom 1104 474 5 0 0 0 lat - -;
+#X floatatom 1128 500 5 0 0 0 lon - -;
+#X floatatom 1153 528 5 0 0 0 alt - -;
+#X floatatom 1177 554 5 0 0 0 crs - -;
+#X floatatom 1202 582 5 0 0 0 spd - -;
+#X floatatom 1227 608 5 0 0 0 time - -;
+#X text 34 119 This is an example for receiving data from an app called
+GyrOSC;
+#X msg 32 235 browse http://www.bitshapesoftware.com/instruments/gyrosc/
+;
+#X obj 527 437 hsl 128 15 -3.142 3.142 0 0 empty empty empty -2 -8
+0 10 -262144 -1 -1 6339 1;
+#X obj 527 458 hsl 128 15 -3.142 3.142 0 0 empty empty empty -2 -8
+0 10 -262144 -1 -1 6344 1;
+#X obj 527 479 hsl 128 15 -3.142 3.142 0 0 empty empty empty -2 -8
+0 10 -262144 -1 -1 6350 1;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 4 0 11 0;
+#X connect 7 0 41 0;
+#X connect 8 0 42 0;
+#X connect 9 0 43 0;
+#X connect 11 0 14 0;
+#X connect 11 0 6 0;
+#X connect 12 0 0 0;
+#X connect 14 0 16 0;
+#X connect 15 0 7 0;
+#X connect 15 1 8 0;
+#X connect 15 2 9 0;
+#X connect 16 0 15 0;
+#X connect 16 1 20 0;
+#X connect 16 2 21 0;
+#X connect 20 0 17 0;
+#X connect 20 1 18 0;
+#X connect 20 2 19 0;
+#X connect 21 0 22 0;
+#X connect 21 1 32 0;
+#X connect 22 0 23 0;
+#X connect 22 1 24 0;
+#X connect 22 2 25 0;
+#X connect 22 3 26 0;
+#X connect 22 4 27 0;
+#X connect 22 5 28 0;
+#X connect 22 6 29 0;
+#X connect 22 7 30 0;
+#X connect 22 8 31 0;
+#X connect 32 0 33 0;
+#X connect 32 1 34 0;
+#X connect 32 2 35 0;
+#X connect 32 3 36 0;
+#X connect 32 4 37 0;
+#X connect 32 5 38 0;
+#X connect 40 0 5 0;
