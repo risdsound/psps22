@@ -3,7 +3,7 @@
 #X obj 128 247 moses 108;
 #X text 173 224 keep with range of MIDI keyboard (21-108);
 #X floatatom 128 276 5 0 0 0 - - - 0;
-#X obj 73 85 inlet;
+#X obj 71 53 inlet;
 #X text 121 82 MIDI notes in;
 #X obj 481 46 inlet;
 #X text 119 173 note offset (+/- 12 = octave);
@@ -41,11 +41,12 @@
 #X obj 266 684 int;
 #X obj 549 358 print;
 #X obj 266 658 ps.scale 0 1 80 127;
+#X obj 71 98 int;
 #X connect 0 1 1 0;
 #X connect 1 0 3 0;
 #X connect 3 0 8 0;
 #X connect 3 0 21 0;
-#X connect 4 0 17 0;
+#X connect 4 0 39 0;
 #X connect 6 0 20 0;
 #X connect 8 0 9 0;
 #X connect 8 1 9 1;
@@ -83,3 +84,4 @@
 #X connect 35 0 33 0;
 #X connect 36 0 31 1;
 #X connect 38 0 36 0;
+#X connect 39 0 17 0;
