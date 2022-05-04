@@ -1,0 +1,53 @@
+#N canvas 670 23 947 445 12;
+#X obj 128 22 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 128 78 line;
+#X floatatom 128 108 5 0 0 0 - - -;
+#X obj 130 162 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 289 14 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 289 102 line;
+#X floatatom 289 133 5 0 0 0 - - -;
+#X obj 292 163 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 289 41 5 0 0 0 - - -;
+#X floatatom 356 39 5 0 0 0 - - -;
+#X obj 289 71 pack f 400;
+#X msg 128 48 \$1 400;
+#X obj 62 209 line~;
+#X obj 62 254 snapshot~;
+#X text 470 56 message boxes and pack can both be used to create messages
+for the line and line~ object;
+#X floatatom 62 292 5 0 0 0 - - -;
+#X obj 219 214 line~;
+#X obj 219 259 snapshot~;
+#X floatatom 219 297 5 0 0 0 - - -;
+#X obj 65 330 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 222 331 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 333 229 metro 20;
+#X obj 333 197 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X connect 0 0 11 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 10 0;
+#X connect 9 0 10 1;
+#X connect 10 0 5 0;
+#X connect 10 0 16 0;
+#X connect 11 0 1 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 15 0;
+#X connect 15 0 19 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 20 0;
+#X connect 21 0 17 0;
+#X connect 21 0 13 0;
+#X connect 22 0 21 0;

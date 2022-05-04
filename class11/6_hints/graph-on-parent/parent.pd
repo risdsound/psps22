@@ -1,0 +1,7 @@
+#N canvas 268 56 673 523 12;
+#X msg 477 119 \; hi /vol 0.5;
+#X msg 481 181 \; hi /vol 0.5;
+#X msg 480 289 \; hi /vol \$1;
+#X floatatom 487 250 5 0 0 0 - - -;
+#X obj 108 181 volslider hi 400;
+#X connect 3 0 2 0;

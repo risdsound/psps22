@@ -1,0 +1,17 @@
+#N canvas 152 41 858 702 12;
+#X floatatom 179 57 5 0 0 0 - - -;
+#X floatatom 179 179 5 0 0 0 - - -;
+#X floatatom 241 86 5 0 0 0 - - -;
+#X floatatom 247 125 5 0 0 0 - - -;
+#X obj 179 102 * 1;
+#X obj 179 134 + 0;
+#X obj 184 19 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 304 83 multiplication = scale;
+#X text 297 126 addition = offset;
+#X connect 0 0 4 0;
+#X connect 2 0 4 1;
+#X connect 3 0 5 1;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;

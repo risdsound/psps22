@@ -1,0 +1,44 @@
+#N canvas 354 66 1066 868 12;
+#X obj 135 445 line;
+#X floatatom 136 476 5 0 0 0 - - -;
+#X obj 210 35 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11400 1;
+#X floatatom 208 66 5 0 0 0 - - -;
+#X obj 280 99 > 70;
+#X obj 249 176 < 30;
+#X obj 281 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 249 199 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 79 347 select 1;
+#X obj 186 348 select 1;
+#X msg 48 384 36 \, 48 200;
+#X msg 202 386 48 \, 36 200;
+#X obj 482 184 ps.sampleplay~ m1;
+#X text 775 231 open window to select sample;
+#X msg 691 225 \; m1 /open;
+#X obj 508 145 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 445 302 dac~;
+#X obj 508 118 select 1;
+#X obj 509 56 change;
+#X floatatom 507 93 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X connect 6 0 18 0;
+#X connect 7 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 16 0;
+#X connect 12 0 16 1;
+#X connect 15 0 12 0;
+#X connect 17 0 15 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;

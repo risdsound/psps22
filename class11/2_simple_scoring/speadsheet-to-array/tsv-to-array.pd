@@ -1,0 +1,44 @@
+#N canvas 458 23 1049 586 10;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array tsv_array 16 float 1;
+#A 0 0 -0.1 -0.3 -0.5 -0.7 0 0.1 0.3 0.5 0.7 1 0.7 0.5 0.3 0.1 0;
+#X coords 0 1 15 -1 200 140 1 0 0;
+#X restore 702 168 graph;
+#X obj 352 134 text define -k \$0-test;
+#A set 0 0.25 0.5 0.75 1 0.75 0.5 0.25 0 -0.25 -0.5 -0.75 -1 -0.75
+-0.25 0 \; 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 0.7 0.5 0.3 0.1
+0 \; 0 -0.1 -0.3 -0.5 -0.7 0 0.1 0.3 0.5 0.7 1 0.7 0.5 0.3 0.1 0;
+#X msg 389 90 read -c Pd_arrayTest.tsv;
+#X text 24 14 When working with spreadsheet applications (Excel \,
+Google Sheets \, etc \; Export as a "TSV" file (tab separated values)
+\; This is easy to import into Pd with built-in objects, f 73;
+#X obj 411 368 text get \$0-test;
+#X obj 426 195 bng 17 250 50 0 empty empty 1_get_number_lines 28 7
+0 10 -262144 -1 -1;
+#X floatatom 426 243 5 0 0 0 - - -;
+#X obj 426 218 text size \$0-test;
+#X obj 411 345 mod;
+#X obj 390 317 + 1;
+#X obj 356 316 f 0;
+#X obj 411 396 array set tsv_array;
+#X obj 356 270 bng 17 250 50 0 empty empty 2_output_lines -88 7 0 10
+-262144 -1 -1;
+#X obj 288 86 openpanel;
+#X obj 288 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 288 108 read \$1;
+#X text 555 89 0_ read TSV file (16 items per row in this example)
+;
+#X connect 2 0 1 0;
+#X connect 4 0 11 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 1;
+#X connect 7 0 6 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 1;
+#X connect 10 0 9 0;
+#X connect 10 0 8 0;
+#X connect 12 0 10 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 1 0;
