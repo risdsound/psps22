@@ -1,0 +1,63 @@
+#N canvas 304 93 1137 791 10;
+#X msg 53 169 close;
+#X obj 45 8 cnv 15 440 60 empty empty empty 20 12 0 14 #c0d828 #404040
+0;
+#X msg 44 142 devices;
+#X floatatom 104 150 5 0 0 0 - - - 0;
+#X msg 104 169 open \$1;
+#X obj 44 256 s;
+#X obj 44 234 serial_print any;
+#X text 46 88 Requires [comport] object \; install under Help > Find
+Externals, f 72;
+#X text 52 16 [serial_print]: abstraction that works with Arduinos'
+Serial.print() and Serial.println() functions (with the use of [comport]).
+It was written by Alexandros Drymonitis. \; See https://github.com/alexdrymonitis/Arduino_Pd
+;
+#X floatatom 438 220 10 0 0 0 - - - 0;
+#X obj 88 637 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 258 637 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 85 590 ps.scale -7 7 0 1;
+#X obj 255 590 ps.scale -7 7 0 1;
+#X floatatom 570 220 10 0 0 0 - - - 0;
+#X floatatom 692 220 10 0 0 0 - - - 0;
+#X obj 44 210 comport 1 9600;
+#X obj 268 148 r touch_values:;
+#X obj 268 180 unpack f f f f;
+#X floatatom 185 254 10 0 0 0 - - - 0;
+#X floatatom 256 253 10 0 0 0 - - - 0;
+#X floatatom 327 250 10 0 0 0 - - - 0;
+#X floatatom 398 253 10 0 0 0 - - - 0;
+#X obj 438 148 r analog_values:;
+#X obj 570 148 r proximity:;
+#X obj 692 148 r ambient:;
+#X floatatom 786 220 10 0 0 0 - - - 0;
+#X obj 786 148 r raw:;
+#X floatatom 494 408 10 0 0 0 - - - 0;
+#X obj 494 336 r x:;
+#X floatatom 573 404 10 0 0 0 - - - 0;
+#X floatatom 653 408 10 0 0 0 - - - 0;
+#X obj 573 332 r y:;
+#X obj 653 336 r z:;
+#X connect 0 0 16 0;
+#X connect 2 0 16 0;
+#X connect 3 0 4 0;
+#X connect 4 0 16 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 12 0 10 0;
+#X connect 13 0 11 0;
+#X connect 16 0 6 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 18 1 20 0;
+#X connect 18 2 21 0;
+#X connect 18 3 22 0;
+#X connect 23 0 9 0;
+#X connect 24 0 14 0;
+#X connect 25 0 15 0;
+#X connect 27 0 26 0;
+#X connect 29 0 28 0;
+#X connect 32 0 30 0;
+#X connect 33 0 31 0;
