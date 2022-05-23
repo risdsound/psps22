@@ -1,0 +1,52 @@
+#N canvas 171 207 1144 697 12;
+#X declare -path cyclone -lib cyclone;
+#X obj 152 493 *~;
+#X obj 385 418 expr~ 1-($v1);
+#X obj 385 388 expr~ sqrt($v1);
+#X obj 214 493 *~;
+#X text 294 146 signal 2;
+#X obj 69 243 readsf~;
+#X obj 67 165 openpanel;
+#X obj 68 135 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X msg 70 199 open \$1 \, 1;
+#X obj 167 603 dac~;
+#X obj 168 558 *~ 0.5;
+#X obj 541 164 declare -path cyclone -lib cyclone;
+#X obj 383 264 peakamp~ 20;
+#X text 128 136 signal 1;
+#X obj 296 175 phasor~ 333;
+#X obj 303 224 *~ 0.2;
+#X floatatom 383 295 5 0 0 0 - - - 0;
+#X obj 120 288 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 159 108 input signals are just for demonstration;
+#X text 516 141 make sure cyclone libarary is installed;
+#X text 154 23 This is a quick attempt at "ducking" - changing the
+volume of one signal based on the amplitude/volume of another;
+#X text 494 298 get the amplitude of main signal;
+#X text 510 381 use amplitude analysis to change the volume of main
+signal (creates a fader that makes to the peaks);
+#X text 502 425 use inverse of amplitude analysis to change the volume
+of secondary signal (creates a fader that makes to the valley);
+#X obj 386 360 line~;
+#X msg 386 333 \$1 20;
+#X connect 0 0 10 0;
+#X connect 1 0 3 1;
+#X connect 2 0 1 0;
+#X connect 2 0 0 1;
+#X connect 3 0 10 0;
+#X connect 5 0 0 0;
+#X connect 5 0 12 0;
+#X connect 5 1 17 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 10 0 9 0;
+#X connect 10 0 9 1;
+#X connect 12 0 16 0;
+#X connect 14 0 15 0;
+#X connect 15 0 3 0;
+#X connect 16 0 25 0;
+#X connect 24 0 2 0;
+#X connect 25 0 24 0;
